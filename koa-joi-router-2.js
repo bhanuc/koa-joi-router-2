@@ -65,8 +65,9 @@ const generateSpec = (baseSpec, userOptions, controllers, json_schemas) => {
 
 module.exports = {
 	generator: (controllers, specPath, baseSpec) => {
-    const json_schemas = requireAll(specPath);
-		const spec = generateSpec(docspec.base, docspec.baseOptions, controllers, json_schemas);
+		const specInput = Object.assign({}, docspec.base, baseSpec)
+    	const json_schemas = requireAll(specPath);
+		const spec = generateSpec(specInput, docspec.baseOptions, controllers, json_schemas);
 		/**
 		 * Swagger JSON API
 		 */
