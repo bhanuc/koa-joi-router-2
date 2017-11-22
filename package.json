@@ -1,0 +1,41 @@
+{
+  "name": "koa-joi-router-2",
+  "version": "0.0.1",
+  "description": "Configurable input/output validation and automated documentation for koa-router",
+  "main": "koa-joi-router-2.js",
+  "keywords": [
+    "joi",
+    "koa",
+    "router",
+    "validate",
+    "validator",
+    "validation",
+    "automatic",
+    "documentation",
+    "swagger",
+    "redoc"
+  ],
+  "scripts": {
+    "test": ""
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "author": "Bhanu Pratap Chaudhary <bhanu423+github@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhanuc/koa-joi-router-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bhanuc/koa-joi-router-2/issues"
+  },
+  "homepage": "https://github.com/bhanuc/koa-joi-router-2",
+  "dependencies": {
+    "joi": "^13.0.2",
+    "joi-to-swagger": "^1.2.0",
+    "koa-router": "^7.2.1",
+    "lodash": "^4.17.4",
+    "require-all": "^2.2.0"
+  }
+}
