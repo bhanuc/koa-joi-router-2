@@ -1,6 +1,6 @@
 {
   "name": "koa-joi-router-2",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Configurable input/output validation and automated documentation for koa-router",
   "main": "koa-joi-router-2.js",
   "keywords": [
