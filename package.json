@@ -1,6 +1,6 @@
 {
   "name": "koa-joi-router-2",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Configurable input/output validation and automated documentation for koa-router",
   "main": "koa-joi-router-2.js",
   "keywords": [
@@ -36,6 +36,7 @@
     "joi-to-swagger": "^1.2.0",
     "koa-router": "^7.2.1",
     "lodash": "^4.17.4",
+    "path-to-regexp": "^2.1.0",
     "require-all": "^2.2.0"
   }
 }
