@@ -1,12 +1,11 @@
-'use strict';
+"use strict";
 
-const documentationRouter = require('koa-router')();
-const docspec = require('./lib/base-spec.js');
-const generator = require('./lib/generator.js');
-const validator = require('./lib/validator.js');
-const _ = require('lodash');
-const requireAll = require('require-all');
-let json_schemas;
+const documentationRouter = require("koa-router")();
+const docspec = require("./lib/base-spec.js");
+const generator = require("./lib/generator.js");
+const validator = require("./lib/validator.js");
+const _ = require("lodash");
+const requireAll = require("require-all");
 
 /**
  * Generate a Swagger 2.0 specification as an object for this API.
@@ -29,7 +28,7 @@ const generateSpec = (baseSpec, userOptions, controllers, json_schemas) => {
 		warnFunc: console.warn,
 		defaultResponses: {
 			200: {
-				description: 'Success'
+				description: "Success"
 			}
 		}
 	}, userOptions);
@@ -46,7 +45,7 @@ const generateSpec = (baseSpec, userOptions, controllers, json_schemas) => {
 	});
 
 	const doc = _.cloneDeep(baseSpec);
-	doc.swagger = '2.0';
+	doc.swagger = "2.0";
 	doc.paths = doc.paths || {};
 	doc.tags = doc.tags || [];
 
@@ -65,30 +64,29 @@ const generateSpec = (baseSpec, userOptions, controllers, json_schemas) => {
 
 module.exports = {
 	generator: (controllers, specPath, baseSpec) => {
-		const specInput = Object.assign({}, docspec.base, baseSpec)
+		const specInput = Object.assign({}, docspec.base, baseSpec);
     	const json_schemas = requireAll(specPath);
 		const spec = generateSpec(specInput, docspec.baseOptions, controllers, json_schemas);
 		/**
 		 * Swagger JSON API
 		 */
-		documentationRouter.get('/_api.json', async ctx => {
-			ctx.body = JSON.stringify(spec, null, '  ');
+		documentationRouter.get("/_api.json", async ctx => {
+			ctx.body = JSON.stringify(spec, null, "  ");
 		});
-
 		/**
 		 * API documentation in redoc
 		 */
-		documentationRouter.get('/redoc', async ctx => {
+		documentationRouter.get("/redoc", async ctx => {
 			ctx.body = docspec.redoc;
 		});
 
 		/**
 		 * API documentation in swagger
 		 */
-		documentationRouter.get('/swagger', async ctx => {
+		documentationRouter.get("/swagger", async ctx => {
 			ctx.body = docspec.swagger;
 		});
 		return documentationRouter;
-  },
-  validator
+	},
+	validator
 };
