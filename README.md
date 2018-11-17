@@ -10,10 +10,6 @@ Joi Validation and Documentation for koa-router.
 - string path support
 - meta data support
 
-#### Node compatibility
-
-NodeJS `>= 8.3` is required.
-
 #### Example
 
 See in example folder

@@ -1,6 +1,6 @@
 {
   "name": "koa-joi-router-2",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Configurable input/output validation and automated documentation for koa-router",
   "main": "koa-joi-router-2.js",
   "keywords": [
@@ -32,11 +32,11 @@
   },
   "homepage": "https://github.com/bhanuc/koa-joi-router-2",
   "dependencies": {
-    "joi": "^13.0.2",
-    "joi-to-swagger": "^1.2.0",
+    "joi": "^14.0.6",
+    "joi-to-swagger": "^3.0.0",
     "koa-router": "^7.2.1",
     "lodash": "^4.17.4",
     "path-to-regexp": "^2.1.0",
-    "require-all": "^2.2.0"
+    "require-all": "^3.0.0"
   }
 }
